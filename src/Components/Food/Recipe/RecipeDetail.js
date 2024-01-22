@@ -16,6 +16,8 @@ const RecipeDetail = () => {
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
   const [itemsPerPage, setItemsPerPage] = useState(2); //
 
+  const history = useNavigate();
+
   useEffect(() => {
     setPageSwitch(false);
     //console.log(data[0]);
@@ -32,7 +34,7 @@ const RecipeDetail = () => {
   const l = useLocation();
   let data = null;
 
-  if (!!l.state) {
+  if (!!l.state) { // l.state 값이 존재하는지(참 값인지) 확인
     data = l.state.data;
   }
 
@@ -348,16 +350,40 @@ const RecipeDetail = () => {
         </div>
 
         {!pageSwitch && (
-          <div className='recipe-page'>
-            <Page1 />
-            <Page2 />
+          <>
+            <div className='btnDiv'>
+            <button
+              onClick={() => {
+                history(-1);
+              }}
+            >
+              뒤로가기
+            </button>
           </div>
+            <div className='recipe-page'>
+              
+              <Page1 />
+              <Page2 />
+            </div>
+          </>
         )}
         {pageSwitch && (
-          <div className='recipe-page'>
-            <Page3 />
-            <Page4 />
+          <>
+            <div className='btnDiv'>
+            <button
+              onClick={() => {
+                history(-1);
+              }}
+            >
+              뒤로가기
+            </button>
           </div>
+            <div className='recipe-page'>
+              
+              <Page3 />
+              <Page4 />
+            </div>
+          </>
         )}
       </div>
     </>

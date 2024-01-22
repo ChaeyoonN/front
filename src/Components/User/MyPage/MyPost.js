@@ -109,7 +109,7 @@ const MyPost = () => {
               title: item.title,
               content: item.content,
               regDate: new Date(item.regDate).toISOString().split('T')[0],
-              userId: item.userId.slice(0, 4),
+              userId: item.userId,
               userName: item.userName,
             }))
         );
@@ -117,7 +117,7 @@ const MyPost = () => {
         console.log('No data received from the server.');
       }
 
-      if (result.length > 0) {
+      if (result2.length > 0) {
         processedData.push(
           ...result2
             .filter((item) => item.userId === userId)
@@ -128,7 +128,7 @@ const MyPost = () => {
               title: item.title,
               content: item.content,
               regDate: new Date(item.regDate).toISOString().split('T')[0],
-              userId: item.userId.slice(0, 4),
+              userId: item.userId,
               userName: item.userName,
             }))
         );
@@ -276,7 +276,8 @@ const MyPost = () => {
                       <div className='text-wrapper a1'>{item.rowNumber}</div>
                       <div className='text-wrapper a3'>{item.title}</div>
                       <div className='text-wrapper a4'>
-                        {item.userName.substring(0, 2)}***
+                        {item.userName}
+                        {/* {item.userName.substring(0, item.userName.length - 1) + '*'} */}
                       </div>
                       <div className='text-wrapper a5'>{item.regDate}</div>
                     </div>

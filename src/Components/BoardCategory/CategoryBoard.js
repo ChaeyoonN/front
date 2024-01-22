@@ -271,7 +271,7 @@ const CategoryBoard = () => {
                         <div className='text-wrappera2f'>{item.category}</div>
                         <div className='text-wrappera3f'>{item.title}</div>
                         <div className='text-wrappera4f'>
-                          {item.userName.substring(0, 2)}**
+                          {item.userName}
                         </div>
                         <div className='text-wrappera5f'>{item.regDate}</div>
                       </div>

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
 }
 
 .recipe-page {
@@ -13,6 +14,21 @@
 
   // perspective: 1000px;
   overflow: hidden;
+}
+
+.btnDiv > button {
+  width: 35px;
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: rgba(116, 99, 99, 0.205);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(75, 62, 62, 0.507);
+  }
 }
 
 // 왼편

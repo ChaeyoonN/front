@@ -23,7 +23,7 @@ function LikeList() {
     });
 
     if (res.status === 200) {
-      console.log('data');
+      console.log('data:', res.data);
       setItems(res.data);
     }
   };
